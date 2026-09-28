@@ -1,6 +1,6 @@
 // Fyll inn disse to verdiene fra Supabase-prosjektet deres.
 const SUPABASE_URL = "https://prgsrrpmdybwdsovjwce.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_U91q1_Xa5-EeJIK2cis1Xw_NFF0NxNH";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InByZ3NycnBtZHlid2Rzb3Zqd2NlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA1NzM0MTgsImV4cCI6MjEwNjE0OTQxOH0.KWCDRB8U3asWVlepU_9E2zH3f0F-x6CwyhGAmZXB-6U";
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
