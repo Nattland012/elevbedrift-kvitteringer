@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4f5f7;
+  color: #171717;
+}
+.container { max-width: 900px; margin: 0 auto; padding: 24px; }
+header { margin-bottom: 20px; }
+h1 { margin-bottom: 4px; }
+.card {
+  background: white; border-radius: 16px; padding: 20px;
+  margin: 16px 0; box-shadow: 0 2px 12px rgba(0,0,0,.07);
+}
+label { display: block; font-weight: 600; margin: 12px 0; }
+input {
+  width: 100%; padding: 12px; margin-top: 6px;
+  border: 1px solid #ccc; border-radius: 10px; font-size: 16px;
+}
+button {
+  border: 0; border-radius: 10px; padding: 12px 18px;
+  background: #111; color: white; font-weight: 700; cursor: pointer;
+  font-size: 15px;
+}
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.secondary { background: #e9e9e9; color: #111; }
+.topbar, .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.muted { color: #666; }
+.error { color: #b00020; }
+.status { margin-top: 12px; font-weight: 600; }
+.receipt {
+  border: 1px solid #ddd; border-radius: 12px; padding: 12px;
+  margin: 10px 0; display: grid; grid-template-columns: 90px 1fr auto; gap: 14px;
+  align-items: center;
+}
+.receipt img { width: 90px; height: 90px; object-fit: cover; border-radius: 8px; }
+.receipt strong { display: block; margin-bottom: 4px; }
+.receipt a { color: inherit; }
+@media (max-width: 650px) {
+  .container { padding: 14px; }
+  .fields { grid-template-columns: 1fr; gap: 0; }
+  .receipt { grid-template-columns: 70px 1fr; }
+  .receipt img { width: 70px; height: 70px; }
+  .receipt .open { grid-column: 2; }
+}

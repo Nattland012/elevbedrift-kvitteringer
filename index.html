@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevbedrift – Kvitteringer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🧾 Kvitteringer</h1>
+      <p class="muted">Elevbedriften</p>
+    </header>
+
+    <section id="loginView" class="card">
+      <h2>Logg inn</h2>
+      <form id="loginForm">
+        <label>E-post
+          <input id="email" type="email" required autocomplete="username">
+        </label>
+        <label>Passord
+          <input id="password" type="password" required autocomplete="current-password">
+        </label>
+        <button type="submit">Logg inn</button>
+      </form>
+      <p id="loginError" class="error"></p>
+    </section>
+
+    <section id="appView" hidden>
+      <div class="topbar">
+        <span id="userLabel"></span>
+        <button id="logoutBtn" class="secondary">Logg ut</button>
+      </div>
+
+      <section id="uploadCard" class="card">
+        <h2>📱 Skann kvittering</h2>
+        <p class="muted">Ta bilde direkte med mobilen eller velg et bilde.</p>
+        <input id="receiptFile" type="file" accept="image/*" capture="environment">
+        <div id="ocrStatus" class="muted"></div>
+
+        <div class="fields">
+          <label>Butikk
+            <input id="merchant" placeholder="F.eks. REMA 1000">
+          </label>
+          <label>Dato
+            <input id="receiptDate" type="date">
+          </label>
+          <label>Beløp
+            <input id="amount" inputmode="decimal" placeholder="0,00">
+          </label>
+        </div>
+
+        <button id="uploadBtn" disabled>Last opp kvittering</button>
+        <p id="uploadStatus" class="status"></p>
+      </section>
+
+      <section id="adminCard" class="card" hidden>
+        <div class="row">
+          <div>
+            <h2>💻 Alle kvitteringer</h2>
+            <p class="muted">Kun administrator ser denne oversikten.</p>
+          </div>
+          <button id="refreshBtn" class="secondary">Oppdater</button>
+        </div>
+        <div id="receiptList"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
