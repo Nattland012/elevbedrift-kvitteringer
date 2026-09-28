@@ -1,5 +1,5 @@
 // Fyll inn disse to verdiene fra Supabase-prosjektet deres.
-const SUPABASE_URL = "sb_publishable_U91q1_Xa5-EeJIK2cis1Xw_NFF0NxNH";
+const SUPABASE_URL = "https://prgsrrpmdybwdsovjwce.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_U91q1_Xa5-EeJIK2cis1Xw_NFF0NxNH";
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
